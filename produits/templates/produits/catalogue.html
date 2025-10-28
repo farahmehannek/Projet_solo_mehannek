@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Catalogue - Boutique Cyberpunk</title>
+
+  <style>
+    /* --- Thème global --- */
+    body {
+      background-color: #0b0b0b;
+      color: #39FF14;
+      font-family: 'Orbitron', Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #FFFF00;
+      text-shadow: 0 0 20px #FF00FF;
+      margin: 30px 0;
+      font-size: 2.5em;
+    }
+
+    /* --- Formulaire de filtrage --- */
+    form {
+      margin-bottom: 25px;
+      background-color: #1a1a1a;
+      padding: 15px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 15px #8A2BE2;
+    }
+
+    select, input, button {
+      background-color: #000;
+      color: #39FF14;
+      border: 1px solid #39FF14;
+      border-radius: 5px;
+      padding: 8px 10px;
+      margin: 0 5px;
+    }
+
+    button:hover {
+      background-color: #39FF14;
+      color: #0d0d0d;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    /* --- Grille des produits --- */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #8A2BE2;
+      color: white;
+      padding: 15px;
+      border-radius: 15px;
+      width: 220px;
+      box-shadow: 0 0 15px #39FF14;
+      transition: transform 0.2s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #FFFF00;
+    }
+
+    .card img {
+      border-radius: 10px;
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #39FF14;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #FFFF00;
+      text-shadow: 0 0 10px #FFFF00;
+    }
+
+    .retour {
+      color: #FFFF00;
+      display: block;
+      margin-top: 40px;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    .retour:hover {
+      color: #FF00FF;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Catalogue des produits</h1>
+
+  <!-- 🧩 Formulaire de filtre -->
+  <form method="get">
+    <label>Catégorie :</label>
+    <select name="categorie">
+      <option value="">Toutes</option>
+      {% for cat in categories %}
+        <option value="{{ cat.id }}" {% if request.GET.categorie == cat.id|stringformat:"s" %}selected{% endif %}>
+          {{ cat.nom }}
+        </option>
+      {% endfor %}
+    </select>
+
+    <label>Prix max (€) :</label>
+    <input type="number" name="prix_max" step="0.01" value="{{ request.GET.prix_max }}" placeholder="Ex: 500">
+
+    <button type="submit">Filtrer</button>
+  </form>
+
+  <!-- 🧩 Liste des produits -->
+  <div class="container">
+    {% for p in produits %}
+      <div class="card">
+        {% if p.image %}
+          <img src="{{ p.image.url }}" alt="{{ p.nom }}">
+        {% else %}
+          <div style="width:200px;height:150px;background-color:#222;border-radius:10px;margin-bottom:10px;">(pas d'image)</div>
+        {% endif %}
+        <strong>{{ p.nom }}</strong><br>
+        {{ p.prix }} €<br>
+        <a href="{% url 'produit_detail' p.id %}">Voir le détail</a>
+      </div>
+    {% empty %}
+      <p>Aucun produit trouvé.</p>
+    {% endfor %}
+  </div>
+
+  <a href="{% url 'accueil' %}" class="retour">⬅ Retour à l'accueil</a>
+</body>
+</html>

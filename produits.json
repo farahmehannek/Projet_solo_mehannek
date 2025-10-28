@@ -1,0 +1,90 @@
+[
+  {
+    "model": "produits.produit",
+    "pk": 1,
+    "fields": {
+      "nom": "Clavier Logitech G915 TKL",
+      "description": "Clavier mécanique sans fil RGB, design cyberpunk, switches tactiles ultra plats.",
+      "prix": "189.99",
+      "image": "https://assets.logitech.com/assets/65441/36/g915-tkl.png",
+      "categorie": 2
+    }
+  },
+  {
+    "model": "produits.produit",
+    "pk": 2,
+    "fields": {
+      "nom": "Souris Razer Basilisk V3",
+      "description": "Souris gamer RGB ergonomique avec 11 boutons programmables.",
+      "prix": "79.99",
+      "image": "https://assets2.razerzone.com/images/pnx.assets/5b1de609b10a6e297d5d9d9a7ab32b7c/basilisk-v3-gallery-hero-1500x1000.png",
+      "categorie": 2
+    }
+  },
+  {
+    "model": "produits.produit",
+    "pk": 3,
+    "fields": {
+      "nom": "Écran Samsung Odyssey G5",
+      "description": "Moniteur incurvé QHD 27 pouces, fréquence 144Hz, design néon bleu.",
+      "prix": "279.99",
+      "image": "https://images.samsung.com/is/image/samsung/p6pim/levant/lf27g55tqwmxzn/gallery/levant-odyssey-g5-lf27g55tqwmxzn-410939261?$650_519_PNG$",
+      "categorie": 3
+    }
+  },
+  {
+    "model": "produits.produit",
+    "pk": 4,
+    "fields": {
+      "nom": "Casque SteelSeries Arctis Nova 7",
+      "description": "Casque sans fil avec audio spatial 360°, lumière RGB personnalisable.",
+      "prix": "179.99",
+      "image": "https://steelseries.com/asset/2022/08/23/arctis-nova-7-gallery-01.png",
+      "categorie": 2
+    }
+  },
+  {
+    "model": "produits.produit",
+    "pk": 5,
+    "fields": {
+      "nom": "Smartphone Google Pixel 8 Pro",
+      "description": "Smartphone Android haut de gamme, IA intégrée, design néon vert.",
+      "prix": "1099.99",
+      "image": "https://store.google.com/product/images/pixel_8_pro_hero_carousel_1.png",
+      "categorie": 1
+    }
+  },
+  {
+    "model": "produits.produit",
+    "pk": 6,
+    "fields": {
+      "nom": "Ordinateur Portable ASUS ROG Strix",
+      "description": "PC portable gamer 16Go RAM, RTX 4070, clavier RGB violet.",
+      "prix": "1599.00",
+      "image": "https://dlcdnwebimgs.asus.com/gain/6ff7e0cf-2059-4cb5-87a2-5ac6b65e4a3c/",
+      "categorie": 3
+    }
+  },
+  {
+    "model": "produits.produit",
+    "pk": 7,
+    "fields": {
+      "nom": "Disque SSD NVMe 2To CyberSpeed",
+      "description": "Disque SSD ultra-rapide génération PCIe 5.0, 7500 Mo/s, lumière néon violette.",
+      "prix": "259.99",
+      "image": "https://cdn.pixabay.com/photo/2018/02/07/16/46/computer-3138400_1280.jpg",
+      "categorie": 2
+    }
+  },
+  {
+    "model": "produits.produit",
+    "pk": 8,
+    "fields": {
+      "nom": "Routeur Wi-Fi 6 NeonLink",
+      "description": "Routeur intelligent avec 4 antennes RGB et vitesse de 5,4 Gbps.",
+      "prix": "149.99",
+      "image": "https://cdn.pixabay.com/photo/2018/01/09/19/54/wifi-router-3075970_1280.jpg",
+      "categorie": 1
+    }
+  }
+]
