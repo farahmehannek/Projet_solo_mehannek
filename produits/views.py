@@ -37,8 +37,17 @@ def produit_detail(request, id):
 
 # 🧠 API REST pour React
 def api_produits(request):
-    """Renvoie la liste des produits au format JSON pour le frontend React"""
-    produits = list(Produit.objects.values('id', 'nom', 'prix', 'image', 'categorie_id'))
+    """Renvoie la liste complète des produits pour le frontend React"""
+    produits = list(
+        Produit.objects.values(
+            'id',
+            'nom',
+            'description',   # ✅ ajouté ici
+            'prix',
+            'image',
+            'categorie_id'
+        )
+    )
     return JsonResponse(produits, safe=False)
 
 
@@ -46,4 +55,3 @@ def api_categories(request):
     """Renvoie la liste des catégories au format JSON pour le frontend React"""
     categories = list(Categorie.objects.values('id', 'nom'))
     return JsonResponse(categories, safe=False)
-

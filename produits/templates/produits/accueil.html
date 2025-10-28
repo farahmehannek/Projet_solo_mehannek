@@ -4,15 +4,44 @@
   <meta charset="UTF-8">
   <title>Accueil - Boutique Cyberpunk</title>
   <style>
-    body { background-color:#0d0d0d; color:#39FF14; font-family:'Orbitron',sans-serif; text-align:center; }
-    h1 { color:#FFFF00; text-shadow:0 0 15px #FF00FF; }
-    a { color:#00FF99; text-decoration:none; }
-    a:hover { color:#FFFF00; }
+    body {
+      background-color: #000;
+      color: #39ff14;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #ffff00;
+      text-shadow: 0 0 15px #ff00ff;
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.3em;
+      color: #fff;
+      margin-top: 20px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 30px;
+      background-color: #8A2BE2;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #ff00ff;
+      transition: 0.3s;
+    }
+    a:hover {
+      background-color: #39ff14;
+      color: #000;
+      box-shadow: 0 0 25px #39ff14;
+    }
   </style>
 </head>
 <body>
-  <h1>Bienvenue sur la boutique cyberpunk de Farah ⚡</h1>
-  <p>Explore le catalogue de produits technologiques néon.</p>
-  <a href="{% url 'catalogue' %}">🛍️ Voir le catalogue</a>
+  <h1>🌆 Bienvenue dans la Boutique Cyberpunk 🌆</h1>
+  <p>Découvrez notre catalogue de produits futuristes : accessoires, ordinateurs, et technologies néon !</p>
+  <a href="/catalogue/">🛒 Accéder au catalogue</a>
 </body>
 </html>
